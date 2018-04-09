@@ -1,0 +1,6 @@
+*.egg-info
+dist
+venv
+.idea
+__pycache__
+
