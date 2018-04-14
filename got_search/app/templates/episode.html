@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Game of Thrones{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <h1>{{ episode.title }} (Season {{ season.num }} Episode {{ episode.num }})</h1>
+        <h3>Synopsis</h3>
+        {{ episode.synopsis }}
+    </div>
+{% endblock %}

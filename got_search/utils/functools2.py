@@ -1,7 +1,12 @@
+from functools import wraps
 from random import random
 from time import sleep
-from functools import wraps
 
+from got_search.utils.typevars import A
+
+
+def identity(x: A) -> A:
+    return x
 
 def delay(*, min_sleep=1, duration=1):
     """Decorator to delay execution of a function by a random duration

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Game of Thrones{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <h1>Seasons</h1>
+        {% for season in seasons|sort(attribute='num') %}
+            <h3>Season {{ season.num }}</h3>
+            {{ season.synopsis }}
+            <br>
+            <br>
+            <br>
+        {% endfor %}
+    </div>
+{% endblock %}

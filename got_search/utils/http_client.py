@@ -1,6 +1,6 @@
 import requests
-from got_search.frozen_json import FrozenJson
-from got_search.functools2 import delay
+from got_search.utils.frozen_json import FrozenJson
+from got_search.utils.functools2 import delay
 
 
 class HttpClient:

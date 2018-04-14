@@ -16,11 +16,21 @@ setup(
         "numpy==1.14.2",
         "scipy==1.0.1",
         "scikit-learn==0.19.1",
-        "requests==2.18.4"
+        "requests==2.18.4",
+        "flask==0.12.2",
+        "dataclasses==0.5",
+        "psycopg2==2.7.4"
     ],
     python_requires=">=3.6",
     extras_require={
-        "dev": ["pytest", "jupyterlab"]
+        "dev": ["pytest", "jupyterlab", "ipython"]
+    },
+    entry_points={
+        'console_scripts': [
+            'crawl = got_search.search.crawler:main',
+            'index = got_search.search.index:main',
+            'query = got_search.search.query:main'
+        ]
     },
     include_package_data=True
 )

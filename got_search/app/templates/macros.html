@@ -1,0 +1,19 @@
+{% macro render_seasons_and_episodes(seasons, episodes_by_season) %}
+    {% for season in seasons %}
+        <div class="col-sm">
+            {# hack... #}
+            {% if season is not none %}
+                <h3>
+                    <a href="/seasons/{{ season.num }}">Season {{ season.num }}</a>
+                </h3>
+                <ul>
+                    {% for episode in episodes_by_season[season]|sort(attribute='num') %}
+                        <li>
+                            <a href="/seasons/{{ season.num }}/episodes/{{ episode.num }}">Episode {{ episode.num }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endmacro %}

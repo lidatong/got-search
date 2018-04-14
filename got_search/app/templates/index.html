@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from 'macros.html' import render_seasons_and_episodes %}
+{% block title %}Game of Thrones{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <h1>{{ heading }}</h1>
+        {% for seasons in season_groups %}
+            <div class="row">
+                {{ render_seasons_and_episodes(seasons, episodes_by_season) }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
